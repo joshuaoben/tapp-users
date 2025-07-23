@@ -29,7 +29,7 @@ npm run dev
 # or
 yarn dev
 # or
-pnpm dev
+npm dev
 # or
 bun dev
 
@@ -37,8 +37,8 @@ Then open http://localhost:3000 with your browser to see the result.
 
 
 Project Overview
-    /users – Displays a list of users in a table
-	/users/[id] – View user details
-	/create-user – Simulate user creation (UI only, no persistence)
+- /users – Displays a list of users in a table
+- /users/[id] – View user details
+- /create-user – Simulate user creation (UI only, no persistence)
 
 This project follows Next.js 15 best practices
