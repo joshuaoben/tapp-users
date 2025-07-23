@@ -15,7 +15,7 @@ Below is a guide on how to setup the project on your machine.
 
 1. Clone the Repository
 
-git clone https://github.com/joshuaoben/tapp-world
+git clone https://github.com/joshuaoben/tapp-users
 
 cd tapp-users
 
