@@ -11,9 +11,9 @@ export async function fetchUsers() {
 export async function fetchUserById(id) {
   try {
     const res = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
-    if (!res.ok) {
-      throw new Error(`Error fetching user with id ${id}`);
-    }
+    // if (!res.ok) {
+    //   throw new Error(`Error fetching user with id ${id}`);
+    // }
     return await res.json();
   } catch (err) {
     console.error("API error", err);

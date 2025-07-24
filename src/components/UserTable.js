@@ -8,14 +8,29 @@ import Loading from "@/app/users/loading";
 
 export default function UsersList() {
   const [users, setUsers] = useState([]);
+  const [filteredUsers, setFilteredUsers] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const filterUsers = (filterString, usersArr) => {
+    const newUsers = usersArr.filter((user) =>
+      user.name.toLowerCase().includes(filterString.toLowerCase())
+    );
+    return newUsers;
+  };
+
+  const handleSearchChage = (e) => {
+    let searchString = e.target.value;
+    let filteredUsers = filterUsers(searchString, users);
+    setFilteredUsers(filteredUsers);
+  };
 
   useEffect(() => {
     async function getUsers() {
       try {
         const data = await fetchUsers();
         setUsers(data);
+        setFilteredUsers(data);
       } catch (err) {
         setError(err.message || "Failed to fetch users");
       }
@@ -35,6 +50,17 @@ export default function UsersList() {
           <h3 className="text-2xl font-bold uppercase">Users List</h3>
         </div>
         <div className="bg-gray-100 mx-auto p-8 rounded-xl">
+          <div className="">
+            <span className=" text-center">Kindly search by name</span>
+            <form>
+              <input
+                className="border border-gray-500 p-4 my-4 bg-white w-full rounded-xl"
+                type="text"
+                placeholder="e.g. John Doe"
+                onChange={handleSearchChage}
+              />
+            </form>
+          </div>
           <table className="table-auto mx-auto w-[90vw] sm:w-xl md:w-3xl xl:w-6xl">
             <thead className="border-b border-gray-600 text-left">
               <tr>
@@ -51,7 +77,7 @@ export default function UsersList() {
               </tr>
             </thead>
             <tbody>
-              {users.map((user) => (
+              {filteredUsers.map((user) => (
                 <tr
                   key={user.id}
                   className=" border-b even:bg-white last:border-b-0 border-gray-400"
