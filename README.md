@@ -42,3 +42,8 @@ Project Overview
 - /create-user – Simulate user creation (UI only, no persistence)
 
 This project follows Next.js 15 best practices
+<img width="1254" height="1017" alt="Screenshot 2025-07-23 at 07 57 17" src="https://github.com/user-attachments/assets/8517fdfa-f75f-4530-9cc8-8cb78d1f59c8" />
+
+<img width="1173" height="755" alt="Screenshot 2025-07-23 at 07 57 58" src="https://github.com/user-attachments/assets/225b7343-b7bd-4967-a2f9-c2f2f7d0d1a1" />
+
+<img width="650" height="641" alt="Screenshot 2025-07-23 at 07 58 16" src="https://github.com/user-attachments/assets/c59dd6fe-95ca-4e60-83d5-e5a9c4cbceb3" />
